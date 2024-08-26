@@ -25,10 +25,24 @@ The Quantum Realm Theme Park Website offers an interactive and engaging user exp
 - **Special Offers:** View the latest offers available for the park's visitors.
 - **Booking System:** Allows users to book their adventures, choosing from various packages.
 
-## Installation
+Usage
+Navigate the Website: Explore different zones, view special offers, and use the contact form.
+Booking: Visit the "Book Your Adventure" page, fill in your details, and choose a package.
+Admin Panel: Visit /admin/login to access the admin panel (credentials required). 
 
-Follow these steps to set up the project locally:
+Project Structure
+app.js: Main application logic and routes.
+views/: Contains all EJS templates.
+public/: Contains CSS, images, and client-side JavaScript files.
+database.js: Database connection and queries.
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/FlaviuOiegas/quantum-realm-theme-park.git
+Technologies Used
+Node.js: Backend framework.
+Express.js: Web application framework.
+SQLite: Database.
+EJS: Templating engine.
+CSS: For styling the website.
+
+
+Author
+Flaviu Vasile Oiegas
