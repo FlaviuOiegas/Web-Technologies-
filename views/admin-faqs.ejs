@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - FAQs</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel - FAQs</h1>
+    </header>
+    
+    <main>
+        <form action="/admin/faqs" method="POST">
+            <h2>Add New FAQ</h2>
+            <label for="question">Question:</label>
+            <input type="text" id="question" name="question" required>
+            
+            <label for="answer">Answer:</label>
+            <textarea id="answer" name="answer" required></textarea>
+            
+            <button type="submit">Add FAQ</button>
+        </form>
+        
+        <hr>
+        
+        <h2>Manage Existing FAQs</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Question</th>
+                <th>Answer</th>
+                <th>Actions</th>
+            </tr>
+            <% faqs.forEach(faq => { %>
+            <tr>
+                <td><%= faq.id %></td>
+                <td><%= faq.question %></td>
+                <td><%= faq.answer %></td>
+                <td>
+                    <form action="/admin/faqs/delete/<%= faq.id %>" method="POST">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Quantum Realm. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

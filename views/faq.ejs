@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Quantum Realm</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/images/quantum-realm-logo.png" alt="Quantum Realm Logo">
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/areas">Explore Areas</a>
+            <a href="/faq">FAQ</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/offers">View Offers</a>
+          </nav>
+    </header>
+
+    <main>
+        <section class="faq-section">
+            <h1>Frequently Asked Questions</h1>
+            <% if (faqs && faqs.length) { %>
+                <% faqs.forEach(faq => { %>
+                    <div class="faq-item">
+                        <h2 class="faq-question"><%= faq.question %></h2>
+                        <p class="faq-answer"><%= faq.answer %></p>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>No FAQs available at the moment.</p>
+            <% } %>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Quantum Realm. All Rights Reserved.</p>
+        <p>Follow us: <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+    </footer>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
